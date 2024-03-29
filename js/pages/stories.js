@@ -1,40 +1,6 @@
-import "../chunk-FJBP6WWS.js";
-import {
-  o as o2
-} from "../chunk-5AAO5JVM.js";
-import {
-  e,
-  i,
-  i2,
-  o3 as o,
-  s,
-  t
-} from "../chunk-3GODI6ZW.js";
-import {
-  x
-} from "../chunk-D4ACSUP4.js";
-import {
-  __decorateClass
-} from "../chunk-IIR4N7W3.js";
-
-// src/components/drag-playground.ts
-var DragPlayground = class extends s {
-  constructor() {
-    super(...arguments);
-    this.isDragging = false;
-    this.editorHeightPercent = 0;
-    /**
-     * A set of pointer IDs in the case that the user is dragging with multiple
-     * pointers.
-     */
-    this.pointerIds = /* @__PURE__ */ new Set();
-  }
-  render() {
-    return x`<div
+import"../chunk-S6ICRUQW.js";import{a as p}from"../chunk-D5TRXHQI.js";import{e as n,g as a,i as s,n as d,o as c,p as g}from"../chunk-TXMQCKG7.js";import{a as h}from"../chunk-F2UFI3JK.js";import{a as t}from"../chunk-32HEDUCQ.js";var r=class extends c{constructor(){super(...arguments);this.isDragging=!1;this.editorHeightPercent=0;this.pointerIds=new Set}render(){return h`<div
       id="wrapper"
-      style=${o2({
-      "--editor-percentage": `${this.editorHeightPercent}%`
-    })}
+      style=${p({"--editor-percentage":`${this.editorHeightPercent}%`})}
     >
       <slot name="preview"></slot>
       <div
@@ -53,73 +19,12 @@ var DragPlayground = class extends s {
         @pointerdown=${this.onPointerdown}
         @pointerup=${this.onPointerup}
         @pointermove=${this.onPointermove}
-        class=${o({
-      isDragging: this.isDragging
-    })}
+        class=${g({isDragging:this.isDragging})}
       >
         <md-icon>drag_handle</md-icon>
       </div>
       <slot name="editor"></slot>
-    </div>`;
-  }
-  onFocus() {
-    this.isDragging = true;
-  }
-  onBlur() {
-    this.isDragging = false;
-  }
-  onKeydown(event) {
-    const { key } = event;
-    switch (key) {
-      case "ArrowRight":
-      case "ArrowUp":
-        this.editorHeightPercent = Math.min(this.editorHeightPercent + 1, 100);
-        break;
-      case "ArrowLeft":
-      case "ArrowDown":
-        this.editorHeightPercent = Math.max(this.editorHeightPercent - 1, 0);
-        break;
-      case "PageUp":
-        this.editorHeightPercent = Math.min(this.editorHeightPercent + 10, 100);
-        break;
-      case "PageDown":
-        this.editorHeightPercent = Math.max(this.editorHeightPercent - 10, 0);
-        break;
-      case "Home":
-        this.editorHeightPercent = 0;
-        break;
-      case "End":
-        this.editorHeightPercent = 100;
-        break;
-      default:
-        break;
-    }
-  }
-  onPointerdown(event) {
-    this.isDragging = true;
-    if (this.pointerIds.has(event.pointerId))
-      return;
-    this.pointerIds.add(event.pointerId);
-    event.target.setPointerCapture(event.pointerId);
-  }
-  onPointerup(event) {
-    this.pointerIds.delete(event.pointerId);
-    event.target.releasePointerCapture(event.pointerId);
-    if (this.pointerIds.size === 0) {
-      this.isDragging = false;
-    }
-  }
-  onPointermove(event) {
-    if (!this.isDragging)
-      return;
-    const { clientY: mouseY } = event;
-    const { top: wrapperTop, bottom: wrapperBottom } = this.wrapperEl.getBoundingClientRect();
-    const height = wrapperBottom - wrapperTop;
-    const editorHeightPercent = 100 - (mouseY - wrapperTop) / height * 100;
-    this.editorHeightPercent = Math.min(Math.max(editorHeightPercent, 0), 100);
-  }
-};
-DragPlayground.styles = i2`
+    </div>`}onFocus(){this.isDragging=!0}onBlur(){this.isDragging=!1}onKeydown(e){let{key:i}=e;switch(i){case"ArrowRight":case"ArrowUp":this.editorHeightPercent=Math.min(this.editorHeightPercent+1,100);break;case"ArrowLeft":case"ArrowDown":this.editorHeightPercent=Math.max(this.editorHeightPercent-1,0);break;case"PageUp":this.editorHeightPercent=Math.min(this.editorHeightPercent+10,100);break;case"PageDown":this.editorHeightPercent=Math.max(this.editorHeightPercent-10,0);break;case"Home":this.editorHeightPercent=0;break;case"End":this.editorHeightPercent=100;break;default:break}}onPointerdown(e){this.isDragging=!0,!this.pointerIds.has(e.pointerId)&&(this.pointerIds.add(e.pointerId),e.target.setPointerCapture(e.pointerId))}onPointerup(e){this.pointerIds.delete(e.pointerId),e.target.releasePointerCapture(e.pointerId),this.pointerIds.size===0&&(this.isDragging=!1)}onPointermove(e){if(!this.isDragging)return;let{clientY:i}=e,{top:o,bottom:l}=this.wrapperEl.getBoundingClientRect(),m=l-o,b=100-(i-o)/m*100;this.editorHeightPercent=Math.min(Math.max(b,0),100)}};r.styles=d`
     :host {
       display: block;
       --_drag-bar-height: 24px;
@@ -185,22 +90,4 @@ DragPlayground.styles = i2`
       color: var(--md-sys-color-inverse-on-surface);
       cursor: grabbing;
     }
-  `;
-__decorateClass([
-  t()
-], DragPlayground.prototype, "isDragging", 2);
-__decorateClass([
-  t()
-], DragPlayground.prototype, "editorHeightPercent", 2);
-__decorateClass([
-  i("#wrapper")
-], DragPlayground.prototype, "wrapperEl", 2);
-DragPlayground = __decorateClass([
-  e("drag-playground")
-], DragPlayground);
-/**
- * @license
- * Copyright 2023 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-//# sourceMappingURL=stories.js.map
+  `,t([a()],r.prototype,"isDragging",2),t([a()],r.prototype,"editorHeightPercent",2),t([s("#wrapper")],r.prototype,"wrapperEl",2),r=t([n("drag-playground")],r);

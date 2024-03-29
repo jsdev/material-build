@@ -14,22 +14,22 @@
     <title>Material Web - Typography</title>
     <!-- Set the color of the url bar on mobile to match theme -->
     <meta name="theme-color" content="#251f16" />
-    <link href="/images/favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
+    <link href="https://jsdev.github.io/material-build/images/favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
     <!-- Inlines the global css in site/css/global.css -->
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="https://jsdev.github.io/material-build/css/global.css">
     <!-- MUST be loaded before any lit bundle. allows hydration of SSRd components -->
-    <script type="module" src="/js/ssr-utils/lit-hydrate-support.js"></script>
+    <script type="module" src="https://jsdev.github.io/material-build/js/ssr-utils/lit-hydrate-support.js"></script>
     <!-- Loads definition for <lit-island>. See docs for @11ty/is-land for usage -->
-    <script type="module" src="/js/ssr-utils/lit-island.js"></script>
+    <script type="module" src="https://jsdev.github.io/material-build/js/ssr-utils/lit-island.js"></script>
     <!-- Inlines the material theming logic since we want to prevent FOUC -->
-    <script type="module" src="/js/inline/apply-saved-theme.js"></script>
-    <script type="module" src="/js/pages/global.js"></script>
+    <script type="module" src="https://jsdev.github.io/material-build/js/inline/apply-saved-theme.js"></script>
+    <script type="module" src="https://jsdev.github.io/material-build/js/pages/global.js"></script>
     <noscript>
-      <link rel="stylesheet" href="/css/no-js.css" />
+      <link rel="stylesheet" href="https://jsdev.github.io/material-build/css/no-js.css" />
     </noscript>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+      href="https://jsdev.github.io/material-build/fonts/material-symbols-outlined.woff"
     />
     <!-- If JS is disabled just show the contents without the polyfill -->
     <noscript
@@ -41,14 +41,14 @@
     </noscript>
     <!-- Allows sub-templates to insert into the head -->
     
-  <link rel="stylesheet" href="/css/md-layout.css" />
-  <link rel="stylesheet" href="/css/syntax-highlight.css" />
+  <link rel="stylesheet" href="https://jsdev.github.io/material-build/css/md-layout.css" />
+  <link rel="stylesheet" href="https://jsdev.github.io/material-build/css/syntax-highlight.css" />
 
   </head>
   <!-- dsd-pending hides body until the polyfill has run on browsers that do not support DSD -->
   <body dsd-pending>
     <!-- Inlines the declarative shadow dom polyfill for FF since it's performance sensitive -->
-    <script type="module" src="/js/ssr-utils/dsd-polyfill.js"></script>
+    <script type="module" src="https://jsdev.github.io/material-build/js/ssr-utils/dsd-polyfill.js"></script>
     <lit-island on:idle import="/js/hydration-entrypoints/navigation.js">
       <nav-drawer   page-title="Typography" has-toc><template shadowroot="open" shadowrootmode="open"><style>
     :host {

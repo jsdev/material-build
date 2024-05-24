@@ -1,4 +1,4 @@
-import"../../chunk-VXTFZZ7O.js";import{c as y}from"../../chunk-DOYN2LDF.js";import{c as r,e as l,f as n,n as e,o as b,p as f}from"../../chunk-TXMQCKG7.js";import{a as s,d as v}from"../../chunk-F2UFI3JK.js";import"../../chunk-32HEDUCQ.js";var a=class extends b{constructor(){super(...arguments),this.size="medium",this.label="",this.lowered=!1}render(){let{ariaLabel:o}=this;return s`
+import"../../chunk-VXTFZZ7O.js";import{c as y}from"../../chunk-ATUU4EJH.js";import{c as r,e as l,f as n,n as e,o as b,p as f}from"../../chunk-TXMQCKG7.js";import{a as s,d as v}from"../../chunk-F2UFI3JK.js";import"../../chunk-32HEDUCQ.js";var a=class extends b{constructor(){super(...arguments),this.size="medium",this.label="",this.lowered=!1}render(){let{ariaLabel:o}=this;return s`
       <button
         class="fab ${f(this.getRenderClasses())}"
         aria-label=${o||v}>
